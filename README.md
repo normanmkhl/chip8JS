@@ -1,1 +1,3 @@
-Chip-8 interpreter written in JavaScript.
+chip8 converted to JavaScript.
+
+https://normanmkhl.github.io/chip8JS
