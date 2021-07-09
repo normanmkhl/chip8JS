@@ -119,6 +119,8 @@
 		<dl>
 			<dt>Program</dt>
 			<dd id="loaded-program">None</dd>
+			<dt><abbr title="Frames Per Second">FPS</abbr></dt>
+			<dd id="fps">0</dd>
 		</dl>
 		
 		<p>Chip-8 uses a hexadecimal input. Use the keys below, Reference: <a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#2.1">http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#2.1</a></p>
@@ -287,8 +289,17 @@
 	                    ch.unsetKey(translateKeys[event.keyCode]);
 	                });
 				})();
-				
+				// FPS support.
+				(function() {
+					var fpsOutput = document.querySelector("#fps");
+					setInterval(function() {
+						fpsOutput.textContent = chRenderer.getFps().toPrecision(2);
+					}, 1e3);
+					
+				})();
+
             })();
+			
         </script>
 
     </body>
